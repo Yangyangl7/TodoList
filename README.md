@@ -11,7 +11,7 @@ First Last, luo00130@umn.edu
 
 ## Link to Site
 
-<https://TODO.firebaseapp.com/>
+https://individul-hwk-2-yang.firebaseapp.com/
 
 ## Challenge Task
 
