@@ -5,7 +5,7 @@
         <h1 class="welcome">YToDo 404, You typed wrong url.</h1>
         <template>
             <h2 class="welcome">First of first</h2>
-            <router-link to="todos">
+            <router-link to="/todo">
                 <md-button class="md-raised md-primary">
                     Go Back To Todo List
                 </md-button>

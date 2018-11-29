@@ -168,7 +168,7 @@ export default {
         position: fixed;
         top: 0;
         overflow: hidden;
-        z-index:1000 
+        padding: 0;
     }
 
     .meun div{

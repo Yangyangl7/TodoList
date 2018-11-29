@@ -27,20 +27,15 @@
                     </md-button>
                 </div>
 
-                <div class="deleteNote">
-                    <select v-model="selected" @change="deleteCate(selected)">
+                <span class="delete">
+                    <select class="deleteNote" v-model="selected" @change="deleteCate(selected)">
+                        <option value="">Category Delete Selector</option>    
                         <option v-for="cate in orderedCates" :key="cate.id">{{cate.name}}</option>
                     </select>
-                </div> 
+                </span>
         </md-toolbar>
 
         <div class="main">
-
-            <!-- <div class="deleteNote">
-                <select v-model="selected" @change="deleteCate(selected)">
-                    <option v-for="cate in orderedCates" :key="cate.id">{{cate.name}}</option>
-                </select>
-            </div> -->
 
             <img src="../assets/todo.png">
             <h2>Hello {{user.displayName}}, Here is Todo List.</h2>
@@ -244,7 +239,11 @@ export default {
 
 <style scoped>
 
-    select {
+    .delete {
+        width: 100%;
+    }
+
+    .deleteNote {
         width: 100%;
         border:0px;
         outline:0px;
@@ -256,10 +255,11 @@ export default {
         position: fixed;
         top: 0;
         overflow: hidden;
+        padding:0px;
     }
 
     .main {
-        margin-top: 75px;
+        margin-top: 100px;
     }
 
     .doneBtn{

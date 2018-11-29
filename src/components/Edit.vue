@@ -146,20 +146,32 @@ export default {
             .catch(err => alert('Oops. ' + err.message));
         },
         modifyTodo: function(editTodo) {
+            let self = this;
             db.collection("category")
               .where("name", "==", editTodo.cachedCategory)
               .get()
               .then(function(querySnapshot) {
-                    querySnapshot.forEach(function(doc) {
+                    if (!querySnapshot.empty) {
+                        querySnapshot.forEach(function(doc) {
+                            db.collection("category")
+                              .doc(doc.id).update({
+                                    name: editTodo.category
+                              });
+                        })    
+                    }
+                    else {
                         db.collection("category")
-                          .doc(doc.id).update({
-                                name: editTodo.category
-                            });
-                    })    
+                          .add({
+                              name: editTodo.category,
+                              author: self.user.email, 
+                              createdAt: new Date()
+                          })                        
+                    }
                 })
                .catch(function(err) {
                    alert("Ohh" + err);
                })
+
             db.collection("note").doc(this.$route.params.id).update({
                 title: editTodo.title,
                 content: editTodo.content,
@@ -181,6 +193,8 @@ export default {
         width: 100%;
         position: fixed;
         top: 0;
+        overflow: hidden;
+        padding: 0;
     }
 
     .main {

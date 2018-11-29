@@ -35,7 +35,7 @@
                     <md-textarea v-model="newTodo.content" class="descInput" maxlength="100" placeholder="New ToDo Detailed Description"></md-textarea>
                 </md-field>
 
-                <md-button class="md-raised md-primary create" @click="checkForm(newTodo)">Create New Todo</md-button>
+                <md-button class="md-raised md-primary create" @click="checkForm(newTodo)">Create New Done</md-button>
             </div>
 
             <div class="noteList" v-for="todo in orderedTodos" :key="todo.id">
@@ -103,7 +103,7 @@ export default {
         },
         done: function (docId) {
             db.collection("note").doc(docId).update({
-                status: true
+                status: false
             }).then(this.getTodo)
         },
         signOut: function() {
@@ -167,6 +167,8 @@ export default {
         width: 100%;
         position: fixed;
         top: 0;
+        padding: 0;
+        overflow: hidden;
     }
 
     .main {

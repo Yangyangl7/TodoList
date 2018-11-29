@@ -28,7 +28,6 @@
                         LogOut
                     </md-button>
                 </div>
-            <!-- </div> -->
         </md-toolbar>
 
         <div class="main">
@@ -162,6 +161,8 @@ export default {
             width: 100%;
             position: fixed;
             top: 0;
+            padding: 0;
+            overflow: hidden;
     }
 
     .main {
