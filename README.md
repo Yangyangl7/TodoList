@@ -16,4 +16,4 @@ https://cs5117-hwk2-yang.firebaseapp.com
 ## Challenge Task
 
 * I started the challenge task: [yes]
-* I completed the challenge task: [no]
+* I completed the challenge task: [yes]
