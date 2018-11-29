@@ -76,13 +76,17 @@ export default {
         checkForm: function (editTodo) {
             this.errors = [];
 
-            if (editTodo.title) {
+            if (editTodo.title && editTodo.category) {
                 this.modifyTodo(editTodo);
                 alert("Modification Success!");
             }
 
             if (!editTodo.title) {
                 this.errors.push("Title required.");
+            }
+
+            if (!this.editTodo.category) {
+                this.errors.push("Category required.");
             }
 
         },

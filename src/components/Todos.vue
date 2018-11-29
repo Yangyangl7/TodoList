@@ -29,7 +29,7 @@
 
                 <span class="delete">
                     <select class="deleteNote" v-model="selected" @change="deleteCate(selected)">
-                        <option value="">Category Delete Selector</option>    
+                        <option value="" selected>Category Delete Selector</option>    
                         <option v-for="cate in orderedCates" :key="cate.id">{{cate.name}}</option>
                     </select>
                 </span>
@@ -118,13 +118,17 @@ export default {
         checkForm: function (newTodo) {
             this.errors = [];
 
-            if (newTodo.title) {
+            if (newTodo.title && newTodo.category) {
                 this.addTodo(newTodo);
                 return true;
             }
 
             if (!this.newTodo.title) {
                 this.errors.push("Title required.");
+            }
+
+            if (!this.newTodo.category) {
+                this.errors.push("Category required.");
             }
 
         },
@@ -212,7 +216,6 @@ export default {
               })
         },
         deleteCate: function(cateName) {
-            alert("Step in");
             let self = this;
             db.collection("category")
               .where("name", "==", cateName)
