@@ -1,6 +1,3 @@
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
 # CSCI 5117 Fall 2018 -- Module 2 Homework
 
 Instructions:
