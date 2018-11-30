@@ -19,6 +19,6 @@ https://cs5117-hwk2-yang.firebaseapp.com
 * I completed the challenge task: [yes]
 
 ## Something about the web
-* Please ignore the dir "hwk-individual-yang"
+* Please ignore the dir "hwk2-individual-yang"
 * Edit means submit
 * Save just works as save button instead of submit, you can see saved content when you step into the page later.
